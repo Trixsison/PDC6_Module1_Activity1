@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDC6_ACT1.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Black" Padding="24" CornerRadius="0">
+            <Label Text="FRUITIES" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="LightSalmon" FontSize="40" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   FontAttributes="Bold"/>
+        </Frame>
+        <StackLayout Margin="10, 0">
+            <Label Text="Label No. 1">
+                <Label.FontSize>
+                    <x:StaticExtension Member="local:AppConstants.NormalFontSize" />
+                </Label.FontSize>
+            </Label>
+            <Label Text="Apple">
+                <Label.FontSize>
+                    <x:Static Member="local:AppConstants.NormalFontSize" />
+                </Label.FontSize>
+            </Label>
+
+            <Label Text="Banana"
+               FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
+
+            <Label Text="Orange"
+               FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
+
+            <Label Text="Kiwi"
+               FontSize="{x:Static local:AppConstants.NormalFontSize}" />
+
+            <Label Text="&#x03C0; &#x00D7; E sized text"
+               FontSize="{x:Static sys:Math.PI}"
+               Scale="{x:Static sys:Math.E}" 
+               HorizontalOptions="Center" />
+
+            <Label HorizontalTextAlignment="Center"
+               FontSize="{x:Static local:AppConstants.NormalFontSize}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Runtime Platform: " />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{x:Static Device.RuntimePlatform}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <StackLayout x:Name="stackLayout"
+                 Padding="10, 0">
+
+                <Button Text="Create a Slider"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CreateCommand}"
+                CommandParameter="{x:Type Slider}" />
+
+                <Button Text="Create a Stepper"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CreateCommand}"
+                CommandParameter="{x:Type Stepper}" />
+
+                <Button Text="Create a Switch"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CreateCommand}"
+                CommandParameter="{x:Type Switch}" />
+            </StackLayout>
+        </StackLayout>
+        
+       
+        <Entry Keyboard="Email"
+        Placeholder="Enter email address"
+        VerticalOptions="CenterAndExpand" />
+
+        <DatePicker Format="D"
+        VerticalOptions="CenterAndExpand" />
+
+        
+
+
+
+
+        <!--<Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>-->
+        
+        
+    </StackLayout>
+
+</ContentPage>
